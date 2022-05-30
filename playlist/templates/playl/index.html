@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block header %}
+	<h1>{% block title %} Playlist {% endblock %}</h1>
+	{% if g.user %}
+	<a class="action"  href="{{url_for('playl.create')}}">Nueva Playlist</a>
+	{% endif %}
+{% endblock %}
+
+{% block content %}
+<ul class="list-names">
+	{% for playlisttitle in playlists %}
+	<li class="playlisttitle">
+		<div class="container-names">
+			<h1>
+				<a class="action listae" method="get" href="{{url_for('playit.playit', id = playlisttitle['id'])}}">{{playlisttitle['description']}}</a>
+			</h1>
+			<div class="icon listae">{{playlisttitle['icon']}}</div>
+			<a class="action listae" href="{{url_for('playl.update', id = playlisttitle['id'])}}">Editar</a>
+		</div>
+	</li>
+	{% if not loop.last %}
+	
+	{% endif %}
+	{% endfor %}
+</ul>
+{% endblock %}

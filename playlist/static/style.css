@@ -1,0 +1,105 @@
+:root {
+    --azul: #3b82f6;
+    --blanco: #ffffff;
+    --gris-claro: #f5f5f5;
+    --gris: #94a3b8;
+    --gris-oscuro: #64748b;
+    --negro: #000;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: "Lato", sans-serif;
+    background-color: var(--gris-claro);
+}
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+.nombre-app{
+    margin-left: 4rem;
+    color: var(--azul);
+}
+.content{
+    max-width: 92%;
+    margin: auto;
+}
+nav{
+    background-color: var(--gris-oscuro);
+   }
+nav a{
+    font-weight: 900;
+    color: white;
+}
+a:link, a:visited, a:active {
+    text-decoration:none;
+    color: negro;
+
+   }
+.menu-sesion{
+    padding: 1.5rem;
+}
+ul{
+    list-style: none;
+}
+nav li{
+    padding: 0 8rem;
+    font-size: 2rem;
+}
+.action{
+    color: blue;
+}
+.iconí.content{
+    margin-left: 5rem;
+}
+@media(min-width:580px){
+    .container-names{
+        display: flex;
+    }
+    .container-songs{
+        display: flex;
+    }
+    .links-songs{
+        display: flex;
+    }
+    .menu-sesion{
+        display: flex;
+    }
+}
+.container-names{
+    padding: 1.2rem;
+    margin: 2rem;
+    align-items: center;
+    justify-content:flex-start;
+}
+.listae{
+    margin: 0 1rem;
+}
+.icon{
+    font-size:2rem;
+}
+.playlisttitle{
+    width: 100%;
+}
+
+.links-songs{
+    padding: 2rem;
+}
+.links-songs a{
+    padding: 0 2.5rem;
+}
+label{
+    color: var(--gris-oscuro);
+    font-weight: 700;
+}
+.items-songs{
+    margin: 0 1rem;
+    font-size: 2rem;
+    display: grid;
+    padding: 1rem;
+}

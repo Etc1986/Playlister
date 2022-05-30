@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1>{% block title %}Nueva Playlist{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<form class="formulario agregar-pl" method="post">
+	<label>Nombre de la Playlist</label>
+	<input type="text" name="description" id="description"/>	
+	<select name="icon" required>
+		<option  class="icon"    value=""></option>	
+		<option  class="icon"    value="rock">R</option>	
+		<option  class="icon"   value="indie">I</option>
+		<option  class="icon" value="country">C</option>
+	</select>
+	<input type="submit" name="crear" value="Crear Playlist" id="crear">
+</form>
+
+{% endblock %}

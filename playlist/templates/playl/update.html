@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block header %}
+	<h1>{% block title %} Editar{{playlist['description']}} {% endblock %}</h1>
+{% endblock %}
+{% block content %}
+<form method="post">
+	<label>Nombre de la Playlist</label>
+	<input type="text" name="description" id="description" value="{{request.form['description'] or playlist['description']}}" required/>	
+	<select name="icon" required>
+		<option  class="icon"    value="{{request.form['icon'] or playlist['icon']}}"></option>	
+		<option  class="icon"    value="rock"></option></option>	
+		<option  class="icon"   value="indie"></option>
+		<option  class="icon" value="country"></option>
+	</select>
+	<input type="submit" value="Actualizar">
+	</form>
+	<form action="{{url_for('playl.delete', id=playlist['id'])}}" method="post">
+		<input class="danger"  type="submit" value=" Eliminar" onclick="return confirm('Seguro que quieres eliminar tu playlist?')"/>
+	</form>
+{% endblock %}

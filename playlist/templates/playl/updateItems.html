@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block header %}
+	<h1>{% block title %} Editar {{playlistI['title']}} {% endblock %}</h1>
+{% endblock %}
+{% block content %}
+<form method="post">
+<label>Nombre de la canción</label>
+	<input type="text" name="title" required/>	
+	<label>Nombre del artista</label>
+	<input type="text" name="artist" required/>	
+	<label>Año de la canción</label>
+	<input type="year" name="year" required/>	
+	<select name="genre" required>
+		<option  class="genre"    value=""></option>	
+		<option  class="genre"    value="Clasica">Clasica</option>	
+		<option  class="genre"    value="Banda">Banda</option>	
+		<option  class="genre"    value="Hip-Hop">Hip-Hop</option>	
+		<option  class="genre"    value="Edm">Edm</option>	
+		<option  class="genre"    value="Ranchera">Ranchera</option>	
+		<option  class="genre"    value="Rock">Rock</option>	
+		<option  class="genre"   value="Indie">Indie</option>
+		<option  class="genre" value="Country">Country</option>
+	</select>
+	<input type="submit" value="Actualizar">
+	</form>
+	<form action="{{url_for('playit.deleteI', id = playlistI['id'])}}" method="post">
+		<input class="danger"  type="submit" value=" Eliminar" onclick="return confirm('Seguro que quieres eliminar tu playlist?')"/>
+	</form>
+{% endblock %}
